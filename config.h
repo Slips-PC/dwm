@@ -19,8 +19,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
-static const char *defaulttagapps[] = { "kitty", "firefox", "rambox", "steam-native", "thunderbird", "keepassxc", "qbittorrent", "kdenlive", "electrum" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *defaulttagapps[] = { "kitty", "firefox", "rambox", "steam-native", "thunderbird", "keepassxc", "qbittorrent", "tor-browser", "cryptoclients" };
 
 static const Rule rules[] = {
 	/* xprop(1):

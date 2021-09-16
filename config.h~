@@ -19,7 +19,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *defaulttagapps[] = { "kitty", "firefox", "rambox", "steam-native", "thunderbird", "keepassxc", "qbittorrent", "kdenlive", "tor-browser" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -65,7 +66,6 @@ static const char *xprint[] = { "xprint", NULL };
 static const char *xservkill[] = { "xservkill", NULL };
 static const char *volup10[] = { "volup10", NULL };
 static const char *voldown10[] = { "voldown10", NULL };
-static const char *defaulttagapps[] = { "kitty", "firefox", "rambox", "steam-native", "thunderbird", "keepassxc", "qbittorrent", "kdenlive", "electrum" };
 static const char *volup5[] = { "volup5", NULL };
 static const char *voldown5[] = { "voldown5", NULL };
 
@@ -74,6 +74,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = xprint } },
+	{ MODKEY,                       XK_s,      spawndefault,   {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
