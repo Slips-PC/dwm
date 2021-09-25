@@ -16,3 +16,5 @@ centeredwindowname
 swallow
 
 and probably some more i forgot about.
+
+![Desktop Screenshot](https://user-images.githubusercontent.com/59989951/134783431-64ee5dcb-b10a-4b97-9e6a-e08567243cae.png)
