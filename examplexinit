@@ -1,0 +1,4 @@
+picom &!
+feh --bg-fill Pictures/DAB.png &&
+exec dwm &
+exec dwmblocks
