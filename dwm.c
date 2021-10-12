@@ -47,8 +47,8 @@
 #include <kvm.h>
 #endif /* __OpenBSD */
 
-#include "drw.h"
-#include "util.h"
+#include "./includes/drw.h"
+#include "./includes/util.h"
 
 /* macros */
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
