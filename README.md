@@ -4,11 +4,17 @@ As of 09/25/21.
 Included is an example xinitrc, an autostart script, any scripts used by dmenu, and the wallpaper I use.
 
 DEPENDENCIES:
+
 rofi
+
 dmenu
+
 kitty
+
 maim
+
 xclip
+
 (Optional, but will disable volume binds) pamixer
 
 Included patches:
