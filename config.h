@@ -12,7 +12,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#2a8bc1";
+static const char col_cyan[]        = "#2a8bc1"; /* Change this if you want to make the top bar not blue */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -21,7 +21,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
-static const char *defaulttagapps[] = { "kitty", "firefox", "rambox", "steam-native", "thunderbird", "keepassxc", "qbittorrent", "tor-browser", "cryptoclients" };
+static const char *defaulttagapps[] = { "kitty", "firefox", "rambox", "steam-native", "thunderbird", "keepassxc", "qbittorrent", "tor-browser", "cryptoclients" }; /* cryptoclients is a personal script and will not work here, use a different script if you prefer */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -44,8 +44,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "DWINDLE",   dwindle },
-	{ "TILE",      tile },    /* first entry is default */
+	{ "DWINDLE",   dwindle }, /* default entry, if you don't like dwindle move preferred entry to top. */
+	{ "TILE",      tile },    
 	{ "FLOAT",      NULL },    /* no layout function means floating behavior */
 	{ "MONO",      monocle },
 	{ "SPIRAL",    spiral },
@@ -62,10 +62,14 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
+/* commands                                                     */
+/* The chances of this being the wrong way to do this are high, */
+/* but I'm too lazy to learn C to do it better                  */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+/* The next six scripts are included in the goodies subdir.          */
+/* Add them to your preferred $PATH dir. Or don't, I'm not your dad. */
 static const char *xprint[] = { "xprint", NULL };
 static const char *xservkill[] = { "xservkill", NULL };
 static const char *volup10[] = { "volup10", NULL };
@@ -86,6 +90,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	/* I'm so confused as to why mfact isn't set to the middle by default. */
+	/* Unimaginably cringe, suckless.                                      */
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
