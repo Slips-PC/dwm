@@ -5,8 +5,6 @@ Included is an example xinitrc, an autostart script, any scripts used by dmenu, 
 
 DEPENDENCIES:
 
-rofi
-
 dmenu
 
 kitty
